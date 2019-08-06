@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -122,6 +123,9 @@ public class HomeFragment extends Fragment {
     private TextView textViewWater;
     private TextView textViewPh;
     private FirebaseAuth mAuth;
+    private TextView mTitleBar;
+    private ImageView mHomeProfileImage;
+    private TextView mHomeProfileName;
 
 
     @Nullable
@@ -136,9 +140,13 @@ public class HomeFragment extends Fragment {
         textViewWater = view.findViewById(R.id.water);
         textViewPh = view.findViewById(R.id.ph);
         mAuth = FirebaseAuth.getInstance();
+        mHomeProfileImage = view.findViewById(R.id.homeProfileImage);
+        mHomeProfileName = view.findViewById(R.id.homeProfileName);
+
+        mTitleBar = getActivity().findViewById(R.id.toolbarTitle);
+        mTitleBar.setText("Home");
 
         //Set Fragment Title
-        getActivity().setTitle("Home");
 
         relativeMain = view.findViewById(R.id.relative_main);
 
@@ -428,7 +436,9 @@ public class HomeFragment extends Fragment {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 //Call another function to update the UI on the screen by passing in datasnapshot which is like the info
-                updateUi(dataSnapshot.child("Growing Conditions"));
+                updateGrowCond(dataSnapshot.child("Growing Conditions"));
+                updateHomeProfile(dataSnapshot.child("Profile"));
+
 
                 pot_level.clear();
                 plant_location_list.clear();
@@ -678,7 +688,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    private void updateUi(DataSnapshot dataSnapshot) {
+    private void updateGrowCond(DataSnapshot dataSnapshot) {
         for (DataSnapshot ds : dataSnapshot.getChildren()){
             Log.d(TAG, "ds is:  " + ds.getKey());
             GrowingConditions growCond = new GrowingConditions();
@@ -696,6 +706,16 @@ public class HomeFragment extends Fragment {
                 textViewPh.setText(ds.getValue() + "%");
             } else{
 
+            }
+
+        }
+    }
+
+    private void updateHomeProfile(DataSnapshot dataSnapshot) {
+        //Get user's info
+        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            if (ds.getKey().equals("Name")) {
+                mHomeProfileName.setText(ds.getValue().toString());
             }
 
         }

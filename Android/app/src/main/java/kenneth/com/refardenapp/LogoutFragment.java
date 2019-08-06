@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LogoutFragment extends Fragment {
 
+    private TextView mTitleBar;
 
     @Nullable
     @Override
@@ -27,7 +29,8 @@ public class LogoutFragment extends Fragment {
         startActivity(intent);
 
         //Set Fragment Title
-        getActivity().setTitle("Logout");
+        mTitleBar = getActivity().findViewById(R.id.toolbarTitle);
+        mTitleBar.setText("Logout");
 
 
         return view;

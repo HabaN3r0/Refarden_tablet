@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -37,6 +38,7 @@ public class TradeFragment extends Fragment implements TradeAdapter.OnClickListe
     private RecyclerView.LayoutManager mLayoutManager;
     private FloatingActionButton mFab;
     private FirebaseAuth mAuth;
+    private TextView mTitleBar;
 
     @Nullable
     @Override
@@ -44,7 +46,8 @@ public class TradeFragment extends Fragment implements TradeAdapter.OnClickListe
         View view = inflater.inflate(R.layout.fragment_trade, container, false);
 
         //Set Fragment Title
-        getActivity().setTitle("Trade Market");
+        mTitleBar = getActivity().findViewById(R.id.toolbarTitle);
+        mTitleBar.setText("Trade Market");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference();

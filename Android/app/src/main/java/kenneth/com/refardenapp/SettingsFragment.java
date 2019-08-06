@@ -54,6 +54,7 @@ public class SettingsFragment extends Fragment {
     private LinearLayout settingsConc;
     private LinearLayout settingsFreq;
     private FirebaseAuth mAuth;
+    private TextView mTitleBar;
 
 
 
@@ -67,7 +68,8 @@ public class SettingsFragment extends Fragment {
         final DatabaseReference myRef = database.getReference("User Accounts").child(mAuth.getCurrentUser().getUid()).child("Settings Conditions");
 
         //Set Fragment Title
-        getActivity().setTitle("Settings");
+        mTitleBar = getActivity().findViewById(R.id.toolbarTitle);
+        mTitleBar.setText("Settings");
 
         autoSwitch = view.findViewById(R.id.settingsAutomateSwitch);
         settingsTemp = view.findViewById(R.id.settingsTemperature);

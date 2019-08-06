@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -34,6 +35,7 @@ public class NotificationsFragment extends Fragment implements NotificationsAdap
     private RecyclerView.Adapter mNotifAdapter;
     private RecyclerView.LayoutManager mNotifLayoutManager;
     private FirebaseAuth mAuth;
+    private TextView mTitleBar;
 
     @Nullable
     @Override
@@ -41,7 +43,8 @@ public class NotificationsFragment extends Fragment implements NotificationsAdap
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
 
         //Set Fragment Title
-        getActivity().setTitle("Notifications");
+        mTitleBar = getActivity().findViewById(R.id.toolbarTitle);
+        mTitleBar.setText("Notifications");
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();

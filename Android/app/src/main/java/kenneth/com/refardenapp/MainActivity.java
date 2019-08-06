@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -54,11 +55,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //Navigation Drawer
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        //To increase the menu button in the toolbar
+        for (int i = 0; i < toolbar.getChildCount(); i++) {
+            if(toolbar.getChildAt(i) instanceof ImageButton){
+                toolbar.getChildAt(i).setScaleX(2.0f);
+                toolbar.getChildAt(i).setScaleY(2.0f);
+            }
+        }
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();

@@ -43,6 +43,7 @@ public class ProfileFragment extends Fragment {
     private TextView mProfileEmail;
     private TextView mProfileExperience;
     private TextView mProfilePlantTypes;
+    private TextView mTitleBar;
 
     @Nullable
     @Override
@@ -50,7 +51,8 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         //Set Fragment Title
-        getActivity().setTitle("My Profile");
+        mTitleBar = getActivity().findViewById(R.id.toolbarTitle);
+        mTitleBar.setText("Profile");
         mAuth = FirebaseAuth.getInstance();
         mProfileImage = view.findViewById(R.id.profileImage);
         mProfileName = view.findViewById(R.id.profileName);
