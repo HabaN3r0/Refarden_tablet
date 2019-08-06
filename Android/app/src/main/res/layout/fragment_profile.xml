@@ -18,7 +18,7 @@
             android:id="@+id/profileImage"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/ic_account_circle" />
+            android:src="@mipmap/ic_jo_round" />
 
         <LinearLayout
             android:id="@+id/profileTextInfo"
