@@ -80,10 +80,11 @@
 
         <LinearLayout
             android:id="@+id/newPostPlantType"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_width="450dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
+            android:padding="20dp"
             android:background="@drawable/translucent_containers"
             android:orientation="horizontal">
 
@@ -95,6 +96,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:theme="@style/NewPostTextInputLayoutAppearance"
+                app:hintTextAppearance="@style/HintTextLabel"
+                app:errorTextAppearance="@style/ErrorTextLabel"
                 app:errorEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
@@ -113,10 +116,11 @@
 
         <LinearLayout
             android:id="@+id/newPostPlantsWanted"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_width="450dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
+            android:padding="20dp"
             android:background="@drawable/translucent_containers"
             android:orientation="horizontal">
 
@@ -128,6 +132,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:theme="@style/NewPostTextInputLayoutAppearance"
+                app:hintTextAppearance="@style/HintTextLabel"
+                app:errorTextAppearance="@style/ErrorTextLabel"
                 app:errorEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
@@ -147,10 +153,10 @@
 
         <LinearLayout
             android:id="@+id/newPostDescription"
-            android:layout_width="350dp"
+            android:layout_width="450dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/translucent_containers"
             android:orientation="horizontal"
             android:padding="20dp">
@@ -160,7 +166,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:theme="@style/NewPostTextInputLayoutAppearance"
+                app:hintTextAppearance="@style/HintTextLabel"
+                app:errorTextAppearance="@style/ErrorTextLabel"
                 app:errorEnabled="true">
 
                 <android.support.design.widget.TextInputEditText
@@ -171,6 +181,7 @@
                     android:textColor="@color/grey"
                     android:textColorHint="@color/grey"
                     android:textCursorDrawable="@drawable/greycursor"
+                    app:hintTextAppearance="@style/HintTextLabel"
                     app:backgroundTint="@color/transparent" />
 
             </android.support.design.widget.TextInputLayout>
@@ -179,10 +190,10 @@
 
         <LinearLayout
             android:id="@+id/newPostUpload"
-            android:layout_width="350dp"
+            android:layout_width="450dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/translucent_containers"
             android:orientation="horizontal"
             android:padding="20dp">
@@ -202,7 +213,7 @@
                     android:layout_gravity="center"
                     android:text="Upload photo"
                     android:textColor="@color/grey"
-                    android:textSize="20dp" />
+                    android:textSize="25dp" />
 
             </LinearLayout>
 
@@ -211,7 +222,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="-240dp"
+                android:layout_marginStart="-290dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -237,28 +248,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginStart="-230dp"
+                android:layout_marginStart="-290dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/newPostUploadCameraText"
-                    android:layout_width="50dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Camera"
                     android:textColor="@color/grey"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/newPostUploadGalleryText"
-                    android:layout_width="50dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="70dp"
+                    android:layout_marginStart="30dp"
                     android:text="Gallery"
                     android:textColor="@color/grey"
-                    android:textSize="10dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -268,13 +279,13 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:src="@drawable/ic_add"
             app:backgroundTint="@color/brightgrey" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:orientation="horizontal">
 
         </LinearLayout>

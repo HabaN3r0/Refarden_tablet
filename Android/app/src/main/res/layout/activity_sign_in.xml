@@ -45,6 +45,8 @@
         android:layout_marginTop="110dp"
         android:layout_gravity="center"
         android:theme="@style/TextInputLayoutAppearance"
+        app:hintTextAppearance="@style/HintTextLabel"
+        app:errorTextAppearance="@style/ErrorTextLabel"
         app:errorEnabled="true">
 
         <android.support.design.widget.TextInputEditText
@@ -65,7 +67,9 @@
         android:layout_marginTop="110dp"
         android:layout_gravity="center"
         android:theme="@style/TextInputLayoutAppearance"
+        app:hintTextAppearance="@style/HintTextLabel"
         app:errorEnabled="true"
+        app:errorTextAppearance="@style/ErrorTextLabel"
         app:passwordToggleEnabled="true">
 
         <android.support.design.widget.TextInputEditText
@@ -85,9 +89,11 @@
         android:layout_height="wrap_content"
         android:background="@drawable/transparent_bg_bordered_button"
         android:layout_marginTop="100dp"
-        android:paddingLeft="100dp"
-        android:paddingRight="100dp"
+        android:padding="20dp"
+        android:paddingStart="100dp"
+        android:paddingEnd="100dp"
         android:layout_gravity="center"
+        android:textSize="20dp"
         android:text="Sign in"
         android:textAllCaps="false"
         android:textColor="@color/white" />
@@ -106,7 +112,7 @@
             android:layout_gravity="center"
             android:text="New user? "
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/hereButton"
@@ -116,7 +122,7 @@
             android:text="Sign up here"
             android:textAllCaps="false"
             android:textColor="@color/brightgrey"
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
 
     </LinearLayout>

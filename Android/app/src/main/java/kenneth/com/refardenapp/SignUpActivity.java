@@ -27,6 +27,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -155,6 +156,34 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    private boolean validateName() {
+        String emailInput = textInputEmail.getEditText().getText().toString().trim();
+
+        if (emailInput.isEmpty()) {
+            textInputName.setError("Field can't be empty");
+            return false;
+        }
+        else {
+            textInputName.setError(null);
+//            textInputEmail.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateBirth() {
+        String emailInput = textInputEmail.getEditText().getText().toString().trim();
+
+        if (emailInput.isEmpty()) {
+            textInputBirth.setError("Field can't be empty");
+            return false;
+        }
+        else {
+            textInputBirth.setError(null);
+//            textInputEmail.setErrorEnabled(false);
+            return true;
+        }
+    }
+
     private boolean validateEmail() {
         String emailInput = textInputEmail.getEditText().getText().toString().trim();
 
@@ -209,7 +238,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void confirmInput(View v) {
 
-        if (!validateEmail() | !validatePassword() | !validateConfirmPassword()) {
+        if (!validateEmail() | !validatePassword() | !validateConfirmPassword() | !validateName() | !validateBirth()) {
             return;
         }
         String nameInput = textInputName.getEditText().getText().toString().trim();
@@ -263,14 +292,14 @@ public class SignUpActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("User Accounts").child(currentUser.getUid());
 
         //Get current date to save the start date in the database
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyy");
-        LocalDateTime startDate = LocalDateTime.now();
+        Date currentDate = Calendar.getInstance().getTime();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
 
         myRef.child("Profile").child("Name").setValue(name);
         myRef.child("Profile").child("Birthday").setValue(birth);
         myRef.child("Profile").child("UID").setValue(currentUser.getUid());
         myRef.child("Profile").child("Email").setValue(currentUser.getEmail());
-        myRef.child("Profile").child("Start Date").setValue(dtf.format(startDate));
+        myRef.child("Profile").child("Start Date").setValue(dateFormat.format(currentDate));
         myRef.child("Profile").child("Stars").setValue(4);
 
         myRef.child("Growing Conditions").child("Temperature").setValue(0);

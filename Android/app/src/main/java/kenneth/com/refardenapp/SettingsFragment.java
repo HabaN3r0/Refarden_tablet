@@ -42,6 +42,7 @@ public class SettingsFragment extends Fragment {
     private static final String TAG = "Settings Fragment";
     private Switch autoSwitch;
     private Switch mCameraSwitch;
+    private Switch mDripSwitch;
     private Switch mLightSwitch;
     private SeekBar tempSeek;
     private SeekBar lightSeek;
@@ -74,6 +75,7 @@ public class SettingsFragment extends Fragment {
         mTitleBar.setText("Settings");
 
         mCameraSwitch = view.findViewById(R.id.settingsCameraSwitch);
+        mDripSwitch = view.findViewById(R.id.settingsDripSystemSwitch);
 
         autoSwitch = view.findViewById(R.id.settingsAutomateSwitch);
         settingsTemp = view.findViewById(R.id.settingsTemperature);
@@ -157,6 +159,19 @@ public class SettingsFragment extends Fragment {
                 }
         );
 
+        mDripSwitch.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (mDripSwitch.isChecked()) {
+                            myRef.child("Drip System").setValue("True");
+                        } else {
+                            myRef.child("Drip System").setValue("False");
+                        }
+                    }
+                }
+        );
+
         mLightSwitch.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -206,9 +221,10 @@ public class SettingsFragment extends Fragment {
 
     public void checkAutomate(DataSnapshot dataSnapshot, View view, DatabaseReference myRef){
         String cameraCheck = "False";
+        String dripCheck = "False";
         String automateCheck = "on";
         String temperatureCheck = "0";
-        String lightCheck = "False";
+        String lightCheck = "True";
         String concentrationCheck = "0";
         String frequencyCheck = "0";
 
@@ -224,7 +240,14 @@ public class SettingsFragment extends Fragment {
                 } else {
                     mCameraSwitch.setChecked(false);
                 }
-            }else if (ds.getKey().equals("Temperature")) {
+            } else if (ds.getKey().equals("Drip System")) {
+                dripCheck = ds.getValue().toString();
+                if (dripCheck.equals("True")) {
+                    mDripSwitch.setChecked(true);
+                } else {
+                    mDripSwitch.setChecked(false);
+                }
+            } else if (ds.getKey().equals("Temperature")) {
                 temperatureCheck = ds.getValue().toString();
             } else if (ds.getKey().equals("Light")) {
                 lightCheck = ds.getValue().toString();
@@ -233,7 +256,7 @@ public class SettingsFragment extends Fragment {
                 } else {
                     mLightSwitch.setChecked(false);
                 }
-            }else if (ds.getKey().equals("Concentration")) {
+            } else if (ds.getKey().equals("Concentration")) {
                 concentrationCheck = ds.getValue().toString();
             } else if (ds.getKey().equals("Frequency")) {
                 frequencyCheck = ds.getValue().toString();

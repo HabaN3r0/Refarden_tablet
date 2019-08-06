@@ -19,7 +19,7 @@
 
     <style name="ErrorText" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/red</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="HintText" parent="TextAppearance.AppCompat">
@@ -62,7 +62,16 @@
         <item name="colorControlNormal">@color/grey</item>
         <item name="colorControlActivated">@color/grey</item>
         <item name="colorControlHighlight">@color/grey</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+
+    <style name="HintTextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ErrorTextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/red</item>
     </style>
 
     <style name="Button" parent="Widget.Design.FloatingActionButton">
