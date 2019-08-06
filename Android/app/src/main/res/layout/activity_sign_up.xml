@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:id="@+id/signUpScrollView"
-    android:padding="20dp"
+    android:padding="30dp"
     tools:context="kenneth.com.refardenapp.SignUpActivity">
 
     <LinearLayout
@@ -23,8 +23,8 @@
 
             <Button
                 android:id="@+id/backButton"
-                android:layout_width="20dp"
-                android:layout_height="25dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_action_back" />
 
@@ -36,7 +36,7 @@
                 android:layout_gravity="center"
                 android:text="Create an Account"
                 android:textColor="@color/white"
-                android:textSize="30dp" />
+                android:textSize="50dp" />
 
         </LinearLayout>
 
@@ -45,18 +45,18 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
+            android:textSize="25dp"
             android:text="Enter the email address to create your account"
             android:textColor="@color/white" />
 
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/nameInput"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="20dp"
-            android:paddingRight="20dp"
+            android:layout_marginTop="110dp"
+            android:layout_gravity="center"
             android:theme="@style/TextInputLayoutAppearance"
             app:errorEnabled="true">
 
@@ -67,16 +67,15 @@
                 android:textCursorDrawable="@drawable/cursor"
                 android:textColor="@color/white"
                 android:inputType="textPersonName"
-                app:backgroundTint="@color/white"/>
+                app:backgroundTint="@color/white" />
 
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/birthInput"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:paddingRight="20dp"
+            android:layout_gravity="center"
             android:theme="@style/TextInputLayoutAppearance"
             app:errorEnabled="true">
 
@@ -93,10 +92,9 @@
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/emailInput"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:paddingRight="20dp"
+            android:layout_gravity="center"
             android:theme="@style/TextInputLayoutAppearance"
             app:errorEnabled="true">
 
@@ -113,10 +111,9 @@
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/passwordInput"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:paddingRight="20dp"
+            android:layout_gravity="center"
             android:theme="@style/TextInputLayoutAppearance"
             app:errorEnabled="true"
             app:passwordToggleEnabled="true">
@@ -134,10 +131,9 @@
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/confirmPasswordInput"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:paddingRight="20dp"
+            android:layout_gravity="center"
             android:theme="@style/TextInputLayoutAppearance"
             app:errorEnabled="true"
             app:passwordToggleEnabled="true">
@@ -163,6 +159,7 @@
             android:background="@drawable/transparent_bg_bordered_button"
             android:paddingLeft="100dp"
             android:paddingRight="100dp"
+            android:layout_marginTop="100dp"
             android:text="Confirm"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -171,6 +168,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="260dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
         </LinearLayout>
