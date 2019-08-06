@@ -10,18 +10,20 @@
 
     <TextView
         android:id="@+id/settingsHeader1"
-        android:layout_width="wrap_content"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Growing Conditions"
+        android:layout_gravity="center"
         android:textColor="@color/white"
         android:textSize="25dp"/>
 
     <LinearLayout
         android:id="@+id/settingsCamera"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="600dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button">
 
@@ -32,6 +34,7 @@
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
             android:layout_gravity="center"
+            android:textSize="20dp"
             android:text="Camera"/>
 
         <Switch
@@ -39,7 +42,7 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="380dp"
             android:checked="true"
             android:theme="@style/Switch"/>
 
@@ -47,9 +50,10 @@
 
     <LinearLayout
         android:id="@+id/settingsDripSystem"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="600dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button">
 
@@ -60,6 +64,7 @@
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
             android:layout_gravity="center"
+            android:textSize="20dp"
             android:text="Drip System"/>
 
         <Switch
@@ -67,7 +72,7 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="380dp"
             android:checked="true"
             android:theme="@style/Switch"/>
 
@@ -75,9 +80,10 @@
 
     <LinearLayout
         android:id="@+id/settingsAutomate"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="600dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button">
 
@@ -88,6 +94,7 @@
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
             android:layout_gravity="center"
+            android:textSize="20dp"
             android:text="Automate"/>
 
         <Switch
@@ -95,7 +102,7 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="380dp"
             android:checked="true"
             android:theme="@style/Switch"/>
 
@@ -103,20 +110,22 @@
 
     <LinearLayout
         android:id="@+id/settingsTemperature"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="600dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"
         android:visibility="invisible">
 
         <TextView
             android:id="@+id/settingsTemperatureText"
-            android:layout_width="120dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
+            android:textSize="20dp"
             android:text="Temperature:"/>
 
         <TextView
@@ -125,24 +134,26 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:text="00'C"/>
 
         <SeekBar
             android:id="@+id/settingsTemperatureSeek"
-            android:layout_width="120dp"
+            android:layout_width="250dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="380dp"
             android:theme="@style/SeekBar"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/settingsLight"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="600dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"
         android:visibility="invisible">
@@ -154,14 +165,15 @@
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
-            android:text="Light:"/>
+            android:textSize="20dp"
+            android:text="Light"/>
 
         <Switch
             android:id="@+id/settingsLightSwitch"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="380dp"
             android:checked="true"
             android:theme="@style/Switch"/>
 
@@ -169,20 +181,22 @@
 
     <LinearLayout
         android:id="@+id/settingsConcentration"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="600dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"
         android:visibility="invisible">
 
         <TextView
             android:id="@+id/settingsConcentrationText"
-            android:layout_width="120dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
+            android:textSize="20dp"
             android:text="Concentration:"/>
 
         <TextView
@@ -191,35 +205,38 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:text="00%"/>
 
         <SeekBar
             android:id="@+id/settingsConcentrationSeek"
-            android:layout_width="120dp"
+            android:layout_width="250dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="35dp"
             android:theme="@style/SeekBar"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/settingsWaterFrequency"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="600dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"
         android:visibility="invisible">
 
         <TextView
             android:id="@+id/settingsWaterFrequencyText"
-            android:layout_width="120dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
             android:textColor="@color/white"
+            android:textSize="20dp"
             android:text="Water Frequency:"/>
 
         <TextView
@@ -229,14 +246,15 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:textColor="@color/white"
+            android:textSize="20dp"
             android:text="00sec"/>
 
         <SeekBar
             android:id="@+id/settingsWaterFrequencySeek"
-            android:layout_width="120dp"
+            android:layout_width="250dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="35dp"
             android:theme="@style/SeekBar"/>
 
     </LinearLayout>
