@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="30dp">
 
     <LinearLayout
         android:id="@+id/tradeItemHeaderBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="-10dp"
-        android:padding="20dp">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/tradeItemBackButtonLinearLayout"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             android:layout_marginStart="-20dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/tradeItemBackButton"
-                android:layout_width="20dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/ic_action_back" />
         </LinearLayout>
 
@@ -36,21 +35,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="-30dp"
+            android:layout_marginStart="-40dp"
             android:text="Trade Item"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="50dp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/tradeItemDetailsContainer"
-        android:layout_width="350dp"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/translucent_containers"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="50dp">
 
         <LinearLayout
             android:id="@+id/tradeItemProfile"
@@ -61,8 +60,8 @@
 
             <ImageView
                 android:id="@+id/tradeItemPostProfileImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:src="@mipmap/ic_launcher_round" />
 
@@ -73,15 +72,15 @@
                 android:layout_gravity="top"
                 android:layout_marginStart="20dp"
                 android:text="Name"
-                android:textSize="15dp" />
+                android:textSize="25dp" />
 
             <LinearLayout
                 android:id="@+id/tradeItemIcons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tradeReview"
-                android:layout_marginStart="-205dp"
                 android:layout_gravity="bottom"
+                android:layout_marginStart="-205dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -145,12 +144,12 @@
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
             android:text="Description"
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
         <ImageView
             android:id="@+id/tradeItemPostPlantImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
             android:src="@mipmap/ic_launcher" />
@@ -170,8 +169,8 @@
         android:id="@+id/tradItemTradeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:background="@drawable/dullgreen_bg_button"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"

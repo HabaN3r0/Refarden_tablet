@@ -41,7 +41,6 @@ public class ProfileFragment extends Fragment {
     private TextView mProfileName;
     private TextView mProfileBirth;
     private TextView mProfileEmail;
-    private TextView mProfileExperience;
     private TextView mProfilePlantTypes;
     private TextView mTitleBar;
 
@@ -58,7 +57,6 @@ public class ProfileFragment extends Fragment {
         mProfileName = view.findViewById(R.id.profileName);
         mProfileBirth = view.findViewById(R.id.profileBirth);
         mProfileEmail = view.findViewById(R.id.profileEmail);
-        mProfileExperience = view.findViewById(R.id.profileExperience);
         mProfilePlantTypes = view.findViewById(R.id.profilePlantTypes);
 
         // Creating database instance and reference

@@ -34,6 +34,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
+
 
 public class NewTradePostActivity extends AppCompatActivity {
 
@@ -279,9 +283,16 @@ public class NewTradePostActivity extends AppCompatActivity {
         }
 
 //        SimpleDateFormat myFormat = new SimpleDateFormat("ddMMyyyyHHmmssSSS");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmssSSS");
-        LocalDateTime currentDate = LocalDateTime.now();
-        String timeStamp = dtf.format(currentDate);
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyyHHmmssSSS");
+//        LocalDateTime currentDate = LocalDateTime.now();
+//        String timeStamp = dtf.format(currentDate);
+//
+//        Date myDate = new Date();
+        Date currentDate = Calendar.getInstance().getTime();
+        System.out.println("date: " + currentDate);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        String timeStamp = dateFormat.format(currentDate);
+        System.out.println("timestamp: " + timeStamp);
 
         //Post in Trading Platform
         myRef.child("Trading Platform").child(mAuth.getCurrentUser().getUid()).child(timeStamp).child("Name").setValue(name);

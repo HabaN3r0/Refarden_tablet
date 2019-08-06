@@ -4,22 +4,23 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp">
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/settingsHeader1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
         android:text="Growing Conditions"
         android:textColor="@color/white"
-        android:textSize="20dp"/>
+        android:textSize="25dp"/>
 
     <LinearLayout
         android:id="@+id/settingsCamera"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button">
@@ -48,7 +49,6 @@
         android:id="@+id/settingsAutomate"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button">
@@ -77,7 +77,6 @@
         android:id="@+id/settingsTemperature"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"
@@ -115,7 +114,6 @@
         android:id="@+id/settingsLight"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"
@@ -130,22 +128,14 @@
             android:textColor="@color/white"
             android:text="Light:"/>
 
-        <TextView
-            android:id="@+id/settingsLightPercent"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"
-            android:text="0000lm"/>
-
-        <SeekBar
-            android:id="@+id/settingsLightSeek"
-            android:layout_width="120dp"
+        <Switch
+            android:id="@+id/settingsLightSwitch"
+            android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="25dp"
-            android:theme="@style/SeekBar"/>
+            android:layout_marginStart="140dp"
+            android:checked="true"
+            android:theme="@style/Switch"/>
 
     </LinearLayout>
 
@@ -153,7 +143,6 @@
         android:id="@+id/settingsConcentration"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"
@@ -191,7 +180,6 @@
         android:id="@+id/settingsWaterFrequency"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:background="@drawable/transparent_bg_bordered_button"

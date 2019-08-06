@@ -2,34 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotificationsItemActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".NotificationsItemActivity">
 
     <LinearLayout
         android:id="@+id/notificationsItemHeaderBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="-10dp"
-        android:padding="20dp">
+        android:orientation="horizontal">
 
         <LinearLayout
             android:id="@+id/notificationsItemBackButtonLinearLayout"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             android:layout_marginStart="-20dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/notificationsItemBackButton"
-                android:layout_width="20dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/ic_action_back" />
 
         </LinearLayout>
@@ -39,21 +38,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="-30dp"
+            android:layout_marginStart="-40dp"
             android:text="Trade Request"
             android:textColor="@color/white"
-            android:textSize="25dp" />
+            android:textSize="50dp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/notificationsItemDetailsContainer"
-        android:layout_width="350dp"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/translucent_containers"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="50dp">
 
         <LinearLayout
             android:id="@+id/notificationsItemProfile"
@@ -64,8 +63,8 @@
 
             <ImageView
                 android:id="@+id/notificationsItemPostProfileImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:src="@mipmap/ic_launcher_round" />
 
@@ -76,7 +75,7 @@
                 android:layout_gravity="top"
                 android:layout_marginStart="20dp"
                 android:text="Requester Name"
-                android:textSize="15dp" />
+                android:textSize="25dp" />
 
             <LinearLayout
                 android:id="@+id/notificationsItemIcons"
@@ -138,7 +137,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="Wants to trade your: "
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
         <LinearLayout
             android:id="@+id/notificationsItemOwner"
@@ -146,9 +145,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:padding="20dp"
+            android:background="@drawable/translucent_containers"
             android:orientation="vertical"
-            android:background="@drawable/translucent_containers">
+            android:padding="20dp">
 
             <TextView
                 android:id="@+id/notificationsItemOwnerItem"
@@ -157,14 +156,14 @@
                 android:layout_gravity="center"
                 android:text="Owner Item"
                 android:textColor="@color/brightgrey"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
             <ImageView
                 android:id="@+id/notificationsItemOwnerItemImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:src="@mipmap/ic_launcher_round" />
 
         </LinearLayout>
@@ -176,17 +175,17 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:text="For: "
-            android:textSize="15dp" />
+            android:textSize="20dp" />
 
         <LinearLayout
             android:id="@+id/notificationsItemRequester"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:orientation="vertical"
             android:layout_marginTop="10dp"
-            android:padding="20dp"
-            android:background="@drawable/translucent_containers">
+            android:background="@drawable/translucent_containers"
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <TextView
                 android:id="@+id/notificationsItemRequesterItem"
@@ -195,14 +194,14 @@
                 android:layout_gravity="center"
                 android:text="Requester Item"
                 android:textColor="@color/brightgrey"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
             <ImageView
                 android:id="@+id/notificationsItemRequesterItemImage"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:src="@mipmap/ic_launcher_round" />
 
         </LinearLayout>
@@ -213,35 +212,39 @@
         android:id="@+id/notificationsItemButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
         android:padding="20dp">
 
         <Button
             android:id="@+id/notificationsItemAcceptButton"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/dullgreen_bg_button"
+            android:padding="15dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
             android:text="Accept"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="25dp" />
 
         <Button
             android:id="@+id/notificationsItemDeclineButton"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="100dp"
             android:background="@drawable/dullred_bg_button"
+            android:padding="15dp"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:text="Decline"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="25dp" />
 
     </LinearLayout>
 

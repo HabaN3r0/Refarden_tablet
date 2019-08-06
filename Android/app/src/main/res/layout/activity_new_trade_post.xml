@@ -8,6 +8,7 @@
     android:background="@drawable/background"
     android:fillViewport="true"
     android:orientation="vertical"
+    android:padding="30dp"
     tools:context="kenneth.com.refardenapp.NewTradePostActivity">
 
     <LinearLayout
@@ -19,22 +20,20 @@
             android:id="@+id/newPostHeaderBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-10dp"
-            android:orientation="horizontal"
-            android:padding="20dp">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/newPostBackButtonLinearLayout"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="-20dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/newPostBackButton"
-                    android:layout_width="20dp"
-                    android:layout_height="25dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/ic_action_back" />
@@ -46,10 +45,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="-30dp"
+                android:layout_marginStart="-40dp"
                 android:text="New Post"
                 android:textColor="@color/white"
-                android:textSize="25dp" />
+                android:textSize="50dp" />
         </LinearLayout>
 
         <!--<LinearLayout-->
@@ -84,7 +83,7 @@
             android:layout_width="350dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginTop="-20dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/translucent_containers"
             android:orientation="horizontal">
 
@@ -268,8 +267,8 @@
             android:id="@+id/createNewPostFAB"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginStart="175dp"
-            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
             android:src="@drawable/ic_add"
             app:backgroundTint="@color/brightgrey" />
 
