@@ -44,19 +44,19 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     // Main layout elements
-    public LinearLayout[] pot_wrapper = new LinearLayout[45];
-    public LinearLayout[] pot_list = new LinearLayout[45];
-    public LinearLayout[] pot_progress = new LinearLayout[45];
-    public TextView[] pot_text = new TextView[45];
-    public TextView[] percentage_text = new TextView[45];
+    public LinearLayout[] pot_wrapper = new LinearLayout[100];
+    public LinearLayout[] pot_list = new LinearLayout[100];
+    public LinearLayout[] pot_progress = new LinearLayout[100];
+    public TextView[] pot_text = new TextView[100];
+    public TextView[] percentage_text = new TextView[100];
 
     // Popup layout elements
-    public LinearLayout[] big_pot_wrapper = new LinearLayout[45];
-    public LinearLayout[] big_pot_list = new LinearLayout[45];
-    public LinearLayout[] big_pot_progress = new LinearLayout[45];
-    public TextView[] big_pot_text = new TextView[45];
-    public TextView[] big_percentage_text = new TextView[45];
-    public LinearLayout[] big_button_list = new LinearLayout[45];
+    public LinearLayout[] big_pot_wrapper = new LinearLayout[100];
+    public LinearLayout[] big_pot_list = new LinearLayout[100];
+    public LinearLayout[] big_pot_progress = new LinearLayout[100];
+    public TextView[] big_pot_text = new TextView[100];
+    public TextView[] big_percentage_text = new TextView[100];
+    public LinearLayout[] big_button_list = new LinearLayout[100];
 
     // All major layout elements
     public RelativeLayout relativeMain;
@@ -72,10 +72,6 @@ public class HomeFragment extends Fragment {
     public LinearLayout lay_Rleft;
     public LinearLayout lay_Rmid;
     public LinearLayout lay_Rright;
-    public LinearLayout mid_left_shift;
-    public LinearLayout mid_right_shift;
-    public LinearLayout right_mid_shift;
-    public LinearLayout left_mid_shift;
     public LinearLayout overlay1;
     public LinearLayout overlay2;
     public LinearLayout overlay3;
@@ -145,6 +141,7 @@ public class HomeFragment extends Fragment {
 
         mTitleBar = getActivity().findViewById(R.id.toolbarTitle);
         mTitleBar.setText("Home");
+        mHomeProfileImage.setImageResource(R.mipmap.ic_jo_round);
 
         //Set Fragment Title
 
@@ -172,38 +169,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 big_layoutR_appear();
-            }
-        });
-
-        mid_left_shift = (LinearLayout) view.findViewById(R.id.container_mid_left);
-        mid_left_shift.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shiftMidtoLeft();
-            }
-        });
-
-        mid_right_shift = (LinearLayout) view.findViewById(R.id.container_mid_right);
-        mid_right_shift.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shiftMidtoRight();
-            }
-        });
-
-        left_mid_shift = (LinearLayout) view.findViewById(R.id.container_left_mid);
-        left_mid_shift.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shiftLefttoMid();
-            }
-        });
-
-        right_mid_shift = (LinearLayout) view.findViewById(R.id.container_right_mid);
-        right_mid_shift.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                shiftRighttoMid();
             }
         });
 
@@ -237,10 +202,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        lay1.setVisibility(View.INVISIBLE);
-        lay3.setVisibility(View.INVISIBLE);
-        right_mid_shift.setVisibility(View.INVISIBLE);
-        left_mid_shift.setVisibility(View.INVISIBLE);
 
         lay_big_name = (LinearLayout) view.findViewById(R.id.container_overlay_name);
         lay_big_name.setVisibility(View.INVISIBLE);
@@ -258,7 +219,7 @@ public class HomeFragment extends Fragment {
 
         lay_Lleft = new LinearLayout(this.getActivity());
         LinearLayout.LayoutParams params_Lleft = new LinearLayout.LayoutParams((int)(wid/3), LinearLayout.LayoutParams.MATCH_PARENT);
-        params_Lleft.setMargins(0,0,0,0);
+        params_Lleft.setMargins(-27,0,0,0);
         lay_Lleft.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
         lay_Lleft.setOrientation(LinearLayout.VERTICAL);
         lay_Lleft.setLayoutParams(params_Lleft);
@@ -266,6 +227,7 @@ public class HomeFragment extends Fragment {
 
         lay_Lmid = new LinearLayout(this.getActivity());
         LinearLayout.LayoutParams params_Lmid = new LinearLayout.LayoutParams((int)(wid/3), LinearLayout.LayoutParams.MATCH_PARENT);
+        params_Lmid.setMargins(-5,0,0,0);
         lay_Lmid.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
         lay_Lmid.setOrientation(LinearLayout.VERTICAL);
         lay_Lmid.setLayoutParams(params_Lmid);
@@ -280,7 +242,7 @@ public class HomeFragment extends Fragment {
 
         lay_Mleft = new LinearLayout(this.getActivity());
         LinearLayout.LayoutParams params_Mleft = new LinearLayout.LayoutParams((int)(wid/3), LinearLayout.LayoutParams.MATCH_PARENT);
-        params_Mleft.setMargins(0,0,0,0);
+        params_Mleft.setMargins(-27,0,0,0);
         lay_Mleft.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
         lay_Mleft.setOrientation(LinearLayout.VERTICAL);
         lay_Mleft.setLayoutParams(params_Mleft);
@@ -288,6 +250,7 @@ public class HomeFragment extends Fragment {
 
         lay_Mmid = new LinearLayout(this.getActivity());
         LinearLayout.LayoutParams params_Mmid = new LinearLayout.LayoutParams((int)(wid/3), LinearLayout.LayoutParams.MATCH_PARENT);
+        params_Mmid.setMargins(-25,0,0,0);
         lay_Mmid.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
         lay_Mmid.setOrientation(LinearLayout.VERTICAL);
         lay_Mmid.setLayoutParams(params_Mmid);
@@ -302,7 +265,7 @@ public class HomeFragment extends Fragment {
 
         lay_Rleft = new LinearLayout(this.getActivity());
         LinearLayout.LayoutParams params_Rleft = new LinearLayout.LayoutParams((int)(wid/3), LinearLayout.LayoutParams.MATCH_PARENT);
-        params_Rleft.setMargins(0,0,0,0);
+        params_Rleft.setMargins(-27,0,0,0);
         lay_Rleft.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
         lay_Rleft.setOrientation(LinearLayout.VERTICAL);
         lay_Rleft.setLayoutParams(params_Rleft);
@@ -310,6 +273,7 @@ public class HomeFragment extends Fragment {
 
         lay_Rmid = new LinearLayout(this.getActivity());
         LinearLayout.LayoutParams params_Rmid = new LinearLayout.LayoutParams((int)(wid/3), LinearLayout.LayoutParams.MATCH_PARENT);
+        params_Rmid.setMargins(-25,0,0,0);
         lay_Rmid.setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
         lay_Rmid.setOrientation(LinearLayout.VERTICAL);
         lay_Rmid.setLayoutParams(params_Rmid);
@@ -721,47 +685,8 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    public void shiftMidtoLeft(){
-        lay1.setVisibility(View.VISIBLE);
-        lay2.setVisibility(View.INVISIBLE);
-        lay3.setVisibility(View.INVISIBLE);
-        mid_left_shift.setVisibility(View.INVISIBLE);
-        mid_right_shift.setVisibility(View.INVISIBLE);
-        left_mid_shift.setVisibility(View.VISIBLE);
-        right_mid_shift.setVisibility(View.INVISIBLE);
-//        assignPotL();
-    }
 
-    public void shiftMidtoRight(){
-        lay1.setVisibility(View.INVISIBLE);
-        lay2.setVisibility(View.INVISIBLE);
-        lay3.setVisibility(View.VISIBLE);
-        mid_left_shift.setVisibility(View.INVISIBLE);
-        mid_right_shift.setVisibility(View.INVISIBLE);
-        left_mid_shift.setVisibility(View.INVISIBLE);
-        right_mid_shift.setVisibility(View.VISIBLE);
-    }
 
-    public void shiftRighttoMid(){
-        lay1.setVisibility(View.INVISIBLE);
-        lay2.setVisibility(View.VISIBLE);
-        lay3.setVisibility(View.INVISIBLE);
-        mid_left_shift.setVisibility(View.VISIBLE);
-        mid_right_shift.setVisibility(View.VISIBLE);
-        left_mid_shift.setVisibility(View.INVISIBLE);
-        right_mid_shift.setVisibility(View.INVISIBLE);
-    }
-
-    public void shiftLefttoMid(){
-        lay1.setVisibility(View.INVISIBLE);
-        lay2.setVisibility(View.VISIBLE);
-        lay3.setVisibility(View.INVISIBLE);
-        mid_left_shift.setVisibility(View.VISIBLE);
-        mid_right_shift.setVisibility(View.VISIBLE);
-        left_mid_shift.setVisibility(View.INVISIBLE);
-        right_mid_shift.setVisibility(View.INVISIBLE);
-//        assignPotM();
-    }
 
     public void assignPotBigL(){
 
@@ -1325,7 +1250,7 @@ public class HomeFragment extends Fragment {
             big_text_params.setMargins(0, 200, 0, 0);
             big_pot_text[layout_big_counter].setLayoutParams(big_text_params);
             big_pot_text[layout_big_counter].setText(pot_names.get(1).get(i));
-            big_pot_text[layout_big_counter].setTextSize(11);
+            big_pot_text[layout_big_counter].setTextSize(5);
             big_pot_text[layout_big_counter].setTextColor(getResources().getColor(R.color.white));
             big_pot_text[layout_big_counter].setGravity(Gravity.CENTER);
 
@@ -1723,11 +1648,11 @@ public class HomeFragment extends Fragment {
             // percentage text
             big_percentage_text[layout_big_counter] = new TextView(this.getActivity());
             RelativeLayout.LayoutParams big_percentage_params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, 50);
-            big_percentage_params.setMargins(20, 0, 0, 0);
+            big_percentage_params.setMargins(100, 200, 0, 0);
             big_percentage_text[layout_big_counter].setLayoutParams(big_percentage_params);
             String percentages = Integer.toString(pot_levels.get(2).get(i));
             big_percentage_text[layout_big_counter].setText(percentages + "%");
-            big_percentage_text[layout_big_counter].setTextSize(8);
+            big_percentage_text[layout_big_counter].setTextSize(12);
             big_percentage_text[layout_big_counter].setTextColor(getResources().getColor(R.color.white));
             big_percentage_text[layout_big_counter].setGravity(Gravity.BOTTOM);
 
@@ -2112,7 +2037,7 @@ public class HomeFragment extends Fragment {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
 
@@ -2122,9 +2047,9 @@ public class HomeFragment extends Fragment {
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(0).size() == 2){
@@ -2134,9 +2059,9 @@ public class HomeFragment extends Fragment {
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter0 == 1){
                     int locs = plant_locations_y.get(0).get(i);
@@ -2144,7 +2069,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -2153,14 +2078,14 @@ public class HomeFragment extends Fragment {
             }else if(plant_locations_x.get(0).size() == 3){
                 margin_top = 0;
             }
-            params_wrapper.setMargins(25, margin_top, 0, 0);
+            params_wrapper.setMargins(0, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
             pot_wrapper[layout_counter].setLayoutParams(params_wrapper);
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
@@ -2170,12 +2095,12 @@ public class HomeFragment extends Fragment {
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(0).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(0).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(0).get(i));
@@ -2187,7 +2112,7 @@ public class HomeFragment extends Fragment {
             RotateAnimation rAnim = (RotateAnimation) AnimationUtils.loadAnimation(this.getActivity(), R.anim.myanim);
             rAnim.setFillAfter(true);
             pot_text[layout_counter].setAnimation(rAnim);
-            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(150, 50);
+            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(100, 50);
 //            text_params.addRule(RelativeLayout.ABOVE, 808000 + i);
 //            text_params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             text_params.setMargins(0, 170, 0, 0);
@@ -2195,7 +2120,7 @@ public class HomeFragment extends Fragment {
             pot_text[layout_counter].setText(pot_names.get(0).get(i));
             pot_text[layout_counter].setTextSize(12);
             pot_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
-            pot_text[layout_counter].setGravity(Gravity.CENTER);
+//            pot_text[layout_counter].setGravity(Gravity.CENTER);
 
             // percentage text
             percentage_text[layout_counter] = new TextView(this.getActivity());
@@ -2207,10 +2132,12 @@ public class HomeFragment extends Fragment {
             percentage_text[layout_counter].setTextSize(12);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
             percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -2228,13 +2155,14 @@ public class HomeFragment extends Fragment {
             layout_counter+=1;
             counter0+=1;
 
+
         }
 
         for(int i = 0; i < plant_locations_x.get(1).size(); i++) {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
 
@@ -2243,9 +2171,9 @@ public class HomeFragment extends Fragment {
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(1).size() == 2){
@@ -2255,9 +2183,9 @@ public class HomeFragment extends Fragment {
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter1 == 1){
                     int locs = plant_locations_y.get(1).get(i);
@@ -2265,7 +2193,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -2282,7 +2210,7 @@ public class HomeFragment extends Fragment {
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
@@ -2292,12 +2220,12 @@ public class HomeFragment extends Fragment {
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(1).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(1).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(1).get(i));
@@ -2329,10 +2257,12 @@ public class HomeFragment extends Fragment {
             percentage_text[layout_counter].setTextSize(12);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
             percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -2356,7 +2286,7 @@ public class HomeFragment extends Fragment {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
 
@@ -2365,9 +2295,9 @@ public class HomeFragment extends Fragment {
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(2).size() == 2){
@@ -2377,9 +2307,9 @@ public class HomeFragment extends Fragment {
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter2 == 1){
                     int locs = plant_locations_y.get(2).get(i);
@@ -2387,7 +2317,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -2397,7 +2327,6 @@ public class HomeFragment extends Fragment {
                 margin_top = 0;
             }
 
-
             params_wrapper.setMargins(25, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
@@ -2405,7 +2334,7 @@ public class HomeFragment extends Fragment {
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
@@ -2415,12 +2344,12 @@ public class HomeFragment extends Fragment {
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(2).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(2).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(2).get(i));
@@ -2451,16 +2380,17 @@ public class HomeFragment extends Fragment {
             String percentages = Integer.toString(pot_levels.get(2).get(i));
             percentage_text[layout_counter].setText(percentages + "%");
             percentage_text[layout_counter].setTextSize(12);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
-            if (progress_height < 60) {
-                percentage_params.setMargins(15, -50 - progress_height, 0, 0);
+            if (progress_height < 50) {
+                percentage_params.setMargins(45, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
             } else {
-                percentage_params.setMargins(15, progress_height - 50, 0, 0);
+                percentage_params.setMargins(45, progress_height - 50, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_progress[layout_counter].addView(percentage_text[layout_counter]);
             }
@@ -3720,7 +3650,7 @@ public class HomeFragment extends Fragment {
             big_percentage_text[layout_big_counter].setLayoutParams(big_percentage_params);
             String percentages = Integer.toString(pot_levels.get(5).get(i));
             big_percentage_text[layout_big_counter].setText(percentages + "%");
-            big_percentage_text[layout_big_counter].setTextSize(8);
+            big_percentage_text[layout_big_counter].setTextSize(12);
             big_percentage_text[layout_big_counter].setTextColor(getResources().getColor(R.color.white));
             big_percentage_text[layout_big_counter].setGravity(Gravity.BOTTOM);
 
@@ -4105,7 +4035,7 @@ public class HomeFragment extends Fragment {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
 
@@ -4115,9 +4045,9 @@ public class HomeFragment extends Fragment {
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(3).size() == 2){
@@ -4127,9 +4057,9 @@ public class HomeFragment extends Fragment {
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter3 == 1){
                     int locs = plant_locations_y.get(3).get(i);
@@ -4137,7 +4067,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -4146,15 +4076,14 @@ public class HomeFragment extends Fragment {
             }else if(plant_locations_x.get(3).size() == 3){
                 margin_top = 0;
             }
-
-            params_wrapper.setMargins(25, margin_top, 0, 0);
+            params_wrapper.setMargins(0, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
             pot_wrapper[layout_counter].setLayoutParams(params_wrapper);
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
@@ -4164,12 +4093,12 @@ public class HomeFragment extends Fragment {
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(3).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(3).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(3).get(i));
@@ -4181,30 +4110,32 @@ public class HomeFragment extends Fragment {
             RotateAnimation rAnim = (RotateAnimation) AnimationUtils.loadAnimation(this.getActivity(), R.anim.myanim);
             rAnim.setFillAfter(true);
             pot_text[layout_counter].setAnimation(rAnim);
-            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(150, 50);
+            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(100, 50);
 //            text_params.addRule(RelativeLayout.ABOVE, 808000 + i);
 //            text_params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             text_params.setMargins(0, 170, 0, 0);
             pot_text[layout_counter].setLayoutParams(text_params);
-            pot_text[layout_counter].setText(pot_names.get(3).get(i));
+            pot_text[layout_counter].setText(pot_names.get(0).get(i));
             pot_text[layout_counter].setTextSize(12);
             pot_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
-            pot_text[layout_counter].setGravity(Gravity.CENTER);
+//            pot_text[layout_counter].setGravity(Gravity.CENTER);
 
             // percentage text
             percentage_text[layout_counter] = new TextView(this.getActivity());
             RelativeLayout.LayoutParams percentage_params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, 50);
             percentage_params.setMargins(90, 0, 0, 0);
             percentage_text[layout_counter].setLayoutParams(percentage_params);
-            String percentages = Integer.toString(pot_levels.get(3).get(i));
+            String percentages = Integer.toString(pot_levels.get(0).get(i));
             percentage_text[layout_counter].setText(percentages + "%");
             percentage_text[layout_counter].setTextSize(12);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
             percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -4222,44 +4153,45 @@ public class HomeFragment extends Fragment {
             layout_counter+=1;
             counter3+=1;
 
-        }
 
-        for(int i = 0; i < plant_locations_x.get(4).size(); i++) {
+        }
+        for(int i = 4; i < plant_locations_x.get(4).size(); i++) {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
+
 
             if(plant_locations_x.get(4).size() == 1){
                 int locs = plant_locations_y.get(4).get(i);
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(4).size() == 2){
-                if(counter3 == 0){
+                if(counter4 == 0){
                     int locs = plant_locations_y.get(4).get(i);
                     pot41loc = locs;
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
-                }else if (counter3 == 1){
+                }else if (counter4 == 1){
                     int locs = plant_locations_y.get(4).get(i);
                     if(pot41loc <= 2){
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -4268,19 +4200,14 @@ public class HomeFragment extends Fragment {
             }else if(plant_locations_x.get(4).size() == 3){
                 margin_top = 0;
             }
-
-
-
-
-
-            params_wrapper.setMargins(25, margin_top, 0, 0);
+            params_wrapper.setMargins(0, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
             pot_wrapper[layout_counter].setLayoutParams(params_wrapper);
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
@@ -4290,12 +4217,12 @@ public class HomeFragment extends Fragment {
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(4).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(4).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(4).get(i));
@@ -4307,30 +4234,32 @@ public class HomeFragment extends Fragment {
             RotateAnimation rAnim = (RotateAnimation) AnimationUtils.loadAnimation(this.getActivity(), R.anim.myanim);
             rAnim.setFillAfter(true);
             pot_text[layout_counter].setAnimation(rAnim);
-            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(150, 50);
+            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(100, 50);
 //            text_params.addRule(RelativeLayout.ABOVE, 808000 + i);
 //            text_params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             text_params.setMargins(0, 170, 0, 0);
             pot_text[layout_counter].setLayoutParams(text_params);
-            pot_text[layout_counter].setText(pot_names.get(4).get(i));
+            pot_text[layout_counter].setText(pot_names.get(0).get(i));
             pot_text[layout_counter].setTextSize(12);
             pot_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
-            pot_text[layout_counter].setGravity(Gravity.CENTER);
+//            pot_text[layout_counter].setGravity(Gravity.CENTER);
 
             // percentage text
             percentage_text[layout_counter] = new TextView(this.getActivity());
             RelativeLayout.LayoutParams percentage_params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, 50);
             percentage_params.setMargins(90, 0, 0, 0);
             percentage_text[layout_counter].setLayoutParams(percentage_params);
-            String percentages = Integer.toString(pot_levels.get(4).get(i));
+            String percentages = Integer.toString(pot_levels.get(0).get(i));
             percentage_text[layout_counter].setText(percentages + "%");
             percentage_text[layout_counter].setTextSize(12);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
             percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -4348,36 +4277,38 @@ public class HomeFragment extends Fragment {
             layout_counter+=1;
             counter4+=1;
 
+
         }
 
         for(int i = 0; i < plant_locations_x.get(5).size(); i++) {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
+
 
             if(plant_locations_x.get(5).size() == 1){
                 int locs = plant_locations_y.get(5).get(i);
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(5).size() == 2){
                 if(counter5 == 0){
-                    int locs = plant_locations_y.get(5).get(i);
+                    int locs = plant_locations_y.get(0).get(i);
                     pot51loc = locs;
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter5 == 1){
                     int locs = plant_locations_y.get(5).get(i);
@@ -4385,7 +4316,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -4394,16 +4325,14 @@ public class HomeFragment extends Fragment {
             }else if(plant_locations_x.get(5).size() == 3){
                 margin_top = 0;
             }
-
-
-            params_wrapper.setMargins(25, margin_top, 0, 0);
+            params_wrapper.setMargins(0, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
             pot_wrapper[layout_counter].setLayoutParams(params_wrapper);
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
@@ -4413,12 +4342,12 @@ public class HomeFragment extends Fragment {
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(5).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(5).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(5).get(i));
@@ -4430,7 +4359,7 @@ public class HomeFragment extends Fragment {
             RotateAnimation rAnim = (RotateAnimation) AnimationUtils.loadAnimation(this.getActivity(), R.anim.myanim);
             rAnim.setFillAfter(true);
             pot_text[layout_counter].setAnimation(rAnim);
-            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(150, 50);
+            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(100, 50);
 //            text_params.addRule(RelativeLayout.ABOVE, 808000 + i);
 //            text_params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             text_params.setMargins(0, 170, 0, 0);
@@ -4438,22 +4367,24 @@ public class HomeFragment extends Fragment {
             pot_text[layout_counter].setText(pot_names.get(5).get(i));
             pot_text[layout_counter].setTextSize(12);
             pot_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
-            pot_text[layout_counter].setGravity(Gravity.CENTER);
+//            pot_text[layout_counter].setGravity(Gravity.CENTER);
 
             // percentage text
             percentage_text[layout_counter] = new TextView(this.getActivity());
-            percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
             RelativeLayout.LayoutParams percentage_params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, 50);
-            percentage_params.setMargins(110, 0, 0, 0);
+            percentage_params.setMargins(90, 0, 0, 0);
             percentage_text[layout_counter].setLayoutParams(percentage_params);
-            String percentages = Integer.toString(pot_levels.get(5).get(i));
+            String percentages = Integer.toString(pot_levels.get(0).get(i));
             percentage_text[layout_counter].setText(percentages + "%");
             percentage_text[layout_counter].setTextSize(12);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
+            percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -4470,6 +4401,7 @@ public class HomeFragment extends Fragment {
 
             layout_counter+=1;
             counter5+=1;
+
 
         }
 
@@ -5921,7 +5853,7 @@ public class HomeFragment extends Fragment {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
 
@@ -5931,9 +5863,9 @@ public class HomeFragment extends Fragment {
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(6).size() == 2){
@@ -5943,9 +5875,9 @@ public class HomeFragment extends Fragment {
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter6 == 1){
                     int locs = plant_locations_y.get(6).get(i);
@@ -5953,7 +5885,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -5962,33 +5894,32 @@ public class HomeFragment extends Fragment {
             }else if(plant_locations_x.get(6).size() == 3){
                 margin_top = 0;
             }
-
-            params_wrapper.setMargins(25, margin_top, 0, 0);
+            params_wrapper.setMargins(0, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
             pot_wrapper[layout_counter].setLayoutParams(params_wrapper);
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
             pot_list[layout_counter].setHorizontalGravity(Gravity.BOTTOM);
             pot_list[layout_counter].setBackgroundResource(R.drawable.transparent_bg_pot);
 
-//pot level
+            //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(6).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(6).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
-            int draw_value = assignBg(pot_levels.get(6).get(i));
+            int draw_value = assignBg(pot_levels.get(0).get(i));
             pot_progress[layout_counter].setBackgroundResource(draw_value);
 
             //pot text
@@ -5997,7 +5928,7 @@ public class HomeFragment extends Fragment {
             RotateAnimation rAnim = (RotateAnimation) AnimationUtils.loadAnimation(this.getActivity(), R.anim.myanim);
             rAnim.setFillAfter(true);
             pot_text[layout_counter].setAnimation(rAnim);
-            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(150, 50);
+            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(100, 50);
 //            text_params.addRule(RelativeLayout.ABOVE, 808000 + i);
 //            text_params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             text_params.setMargins(0, 170, 0, 0);
@@ -6005,7 +5936,7 @@ public class HomeFragment extends Fragment {
             pot_text[layout_counter].setText(pot_names.get(6).get(i));
             pot_text[layout_counter].setTextSize(12);
             pot_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
-            pot_text[layout_counter].setGravity(Gravity.CENTER);
+//            pot_text[layout_counter].setGravity(Gravity.CENTER);
 
             // percentage text
             percentage_text[layout_counter] = new TextView(this.getActivity());
@@ -6017,10 +5948,12 @@ public class HomeFragment extends Fragment {
             percentage_text[layout_counter].setTextSize(12);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
             percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -6036,25 +5969,28 @@ public class HomeFragment extends Fragment {
             lay_Rleft.addView(pot_wrapper[layout_counter]);
 
             layout_counter+=1;
-            counter6+=1;
+            counter7+=1;
+
+
         }
 
         for(int i = 0; i < plant_locations_x.get(7).size(); i++) {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
+
 
             if(plant_locations_x.get(7).size() == 1){
                 int locs = plant_locations_y.get(7).get(i);
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(7).size() == 2){
@@ -6064,9 +6000,9 @@ public class HomeFragment extends Fragment {
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter7 == 1){
                     int locs = plant_locations_y.get(7).get(i);
@@ -6074,7 +6010,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -6083,32 +6019,29 @@ public class HomeFragment extends Fragment {
             }else if(plant_locations_x.get(7).size() == 3){
                 margin_top = 0;
             }
-
-
-
-
-            params_wrapper.setMargins(25, margin_top, 0, 0);
+            params_wrapper.setMargins(0, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
             pot_wrapper[layout_counter].setLayoutParams(params_wrapper);
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
             pot_list[layout_counter].setHorizontalGravity(Gravity.BOTTOM);
             pot_list[layout_counter].setBackgroundResource(R.drawable.transparent_bg_pot);
+
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(7).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(7).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(7).get(i));
@@ -6120,7 +6053,7 @@ public class HomeFragment extends Fragment {
             RotateAnimation rAnim = (RotateAnimation) AnimationUtils.loadAnimation(this.getActivity(), R.anim.myanim);
             rAnim.setFillAfter(true);
             pot_text[layout_counter].setAnimation(rAnim);
-            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(150, 50);
+            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(100, 50);
 //            text_params.addRule(RelativeLayout.ABOVE, 808000 + i);
 //            text_params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             text_params.setMargins(0, 170, 0, 0);
@@ -6128,7 +6061,7 @@ public class HomeFragment extends Fragment {
             pot_text[layout_counter].setText(pot_names.get(7).get(i));
             pot_text[layout_counter].setTextSize(12);
             pot_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
-            pot_text[layout_counter].setGravity(Gravity.CENTER);
+//            pot_text[layout_counter].setGravity(Gravity.CENTER);
 
             // percentage text
             percentage_text[layout_counter] = new TextView(this.getActivity());
@@ -6140,10 +6073,12 @@ public class HomeFragment extends Fragment {
             percentage_text[layout_counter].setTextSize(12);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
             percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -6161,36 +6096,39 @@ public class HomeFragment extends Fragment {
             layout_counter+=1;
             counter7+=1;
 
+
         }
+
 
         for(int i = 0; i < plant_locations_x.get(8).size(); i++) {
 
             //full pot + text
             pot_wrapper[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(170, 170);
+            LinearLayout.LayoutParams params_wrapper = new LinearLayout.LayoutParams(150, 150);
 
             int margin_top = 0;
+
 
             if(plant_locations_x.get(8).size() == 1){
                 int locs = plant_locations_y.get(8).get(i);
                 if(locs<=2){
                     margin_top = 0;
                 }else if(locs >= 3 && locs <= 5){
-                    margin_top = 170;
+                    margin_top = 75;
                 }else{
-                    margin_top = 340;
+                    margin_top = 150;
                 }
             }
             else if (plant_locations_x.get(8).size() == 2){
                 if(counter8 == 0){
-                    int locs = plant_locations_y.get(8).get(i);
+                    int locs = plant_locations_y.get(0).get(i);
                     pot81loc = locs;
                     if (locs<=2){
                         margin_top = 0;
                     }else if (locs >= 3 && locs <= 5){
-                        margin_top = 170;
+                        margin_top = 75;
                     }else{
-                        margin_top = 340;
+                        margin_top = 150;
                     }
                 }else if (counter8 == 1){
                     int locs = plant_locations_y.get(8).get(i);
@@ -6198,7 +6136,7 @@ public class HomeFragment extends Fragment {
                         if (locs <= 5){
                             margin_top = 0;
                         }else{
-                            margin_top = 170;
+                            margin_top = 75;
                         }
                     }else{
                         margin_top = 0;
@@ -6207,16 +6145,14 @@ public class HomeFragment extends Fragment {
             }else if(plant_locations_x.get(8).size() == 3){
                 margin_top = 0;
             }
-
-
-            params_wrapper.setMargins(25, margin_top, 0, 0);
+            params_wrapper.setMargins(0, margin_top, 0, 0);
             pot_wrapper[layout_counter].setOrientation(LinearLayout.HORIZONTAL);
             pot_wrapper[layout_counter].setHorizontalGravity(Gravity.CENTER_HORIZONTAL);
             pot_wrapper[layout_counter].setLayoutParams(params_wrapper);
 
             // basic pot
             pot_list[layout_counter] = new LinearLayout(this.getActivity());
-            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(120, 120);
+            LinearLayout.LayoutParams pot_params = new LinearLayout.LayoutParams(100, 100);
             pot_params.setMargins(100, 30, 0, 0);
             pot_list[layout_counter].setOrientation(LinearLayout.VERTICAL);
             pot_list[layout_counter].setLayoutParams(pot_params);
@@ -6226,12 +6162,12 @@ public class HomeFragment extends Fragment {
             //pot level
             pot_progress[layout_counter] = new LinearLayout(this.getActivity());
             //pot_progress[i].setId(808000 + i);
-            int progress_height = (int)(pot_levels.get(8).get(i)*1.2);
+            int progress_height = (int)(pot_levels.get(8).get(i));
             LinearLayout.LayoutParams pot_progress_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, progress_height);
             if (progress_height < 60) {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             } else {
-                pot_progress_params.setMargins(0, 120 - progress_height, 0, 0);
+                pot_progress_params.setMargins(0, 100 - progress_height, 0, 0);
             }
             pot_progress[layout_counter].setLayoutParams(pot_progress_params);
             int draw_value = assignBg(pot_levels.get(8).get(i));
@@ -6243,7 +6179,7 @@ public class HomeFragment extends Fragment {
             RotateAnimation rAnim = (RotateAnimation) AnimationUtils.loadAnimation(this.getActivity(), R.anim.myanim);
             rAnim.setFillAfter(true);
             pot_text[layout_counter].setAnimation(rAnim);
-            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(150, 50);
+            RelativeLayout.LayoutParams text_params = new RelativeLayout.LayoutParams(100, 50);
 //            text_params.addRule(RelativeLayout.ABOVE, 808000 + i);
 //            text_params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             text_params.setMargins(0, 170, 0, 0);
@@ -6251,7 +6187,7 @@ public class HomeFragment extends Fragment {
             pot_text[layout_counter].setText(pot_names.get(8).get(i));
             pot_text[layout_counter].setTextSize(12);
             pot_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
-            pot_text[layout_counter].setGravity(Gravity.CENTER);
+//            pot_text[layout_counter].setGravity(Gravity.CENTER);
 
             // percentage text
             percentage_text[layout_counter] = new TextView(this.getActivity());
@@ -6260,13 +6196,15 @@ public class HomeFragment extends Fragment {
             percentage_text[layout_counter].setLayoutParams(percentage_params);
             String percentages = Integer.toString(pot_levels.get(8).get(i));
             percentage_text[layout_counter].setText(percentages + "%");
-            percentage_text[layout_counter].setTextSize(12);
+            percentage_text[layout_counter].setTextSize(8);
             percentage_text[layout_counter].setTextColor(getResources().getColor(R.color.white));
             percentage_text[layout_counter].setGravity(Gravity.BOTTOM);
+            percentage_text[layout_counter].setPadding(25, -30, 0, 0);
 
             pot_list[layout_counter].addView(pot_progress[layout_counter]);
 
             if (progress_height < 60) {
+
                 percentage_params.setMargins(15, -50 - progress_height, 0, 0);
                 percentage_text[layout_counter].setLayoutParams(percentage_params);
                 pot_list[layout_counter].addView(percentage_text[layout_counter]);
@@ -6284,9 +6222,8 @@ public class HomeFragment extends Fragment {
             layout_counter+=1;
             counter8+=1;
 
-        }
 
-    }
+        }    }
 
 
     public int assignBg(int pot) {
@@ -6306,37 +6243,28 @@ public class HomeFragment extends Fragment {
     public void big_layoutL_appear(){
         overlay1.setVisibility(View.VISIBLE);
         overlay1.bringToFront();
-        left_mid_shift.setVisibility(View.INVISIBLE);
     }
 
     public void big_layoutM_appear(){
         overlay2.setVisibility(View.VISIBLE);
         overlay1.bringToFront();
-        mid_left_shift.setVisibility(View.INVISIBLE);
-        mid_right_shift.setVisibility(View.INVISIBLE);
     }
 
     public void big_layoutR_appear(){
         overlay3.setVisibility(View.VISIBLE);
         overlay3.bringToFront();
-        right_mid_shift.setVisibility(View.INVISIBLE);
     }
 
     public void big_layoutL_disappear(){
         overlay1.setVisibility(View.GONE);
-        left_mid_shift.setVisibility(View.VISIBLE);
     }
 
     public void big_layoutM_disappear(){
         overlay2.setVisibility(View.GONE);
-        mid_left_shift.setVisibility(View.VISIBLE);
-        mid_right_shift.setVisibility(View.VISIBLE);
     }
 
     public void big_layoutR_disappear(){
         overlay3.setVisibility(View.GONE);
-        right_mid_shift.setEnabled(true);
-        right_mid_shift.setVisibility(View.VISIBLE);
     }
 
     public void setPlantName(int val){

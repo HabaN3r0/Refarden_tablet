@@ -88,7 +88,7 @@ public class TradeItemActivity extends AppCompatActivity {
         }
 
         mTradeItemProfileName.setText(itemOwner);
-//        mTradeItemProfileImage.setImageResource(plantImage);
+        mTradeItemProfileImage.setImageResource(R.mipmap.ic_jo_round);
         mTradeItemPlantType.setText(plantType);
         mTradeItemPlantsWanted.setText("Plant wanted: " + plantsWanted);
         mTradeItemDescription.setText(description);

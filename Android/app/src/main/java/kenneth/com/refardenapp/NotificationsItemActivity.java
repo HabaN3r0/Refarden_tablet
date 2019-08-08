@@ -104,12 +104,12 @@ public class NotificationsItemActivity extends AppCompatActivity {
         }
 
         mNotificationsItemProfileName.setText(requesterName);
-        mNotificationsItemProfileImage.setImageResource(plantImage);
+        mNotificationsItemProfileImage.setImageResource(R.mipmap.ic_jo_round);
         mNotificationsItemOwnerItem.setText(plantType);
-        mNotificationsItemOwnerItemImage.setImageResource(plantImage);
+        mNotificationsItemOwnerItemImage.setImageResource(R.drawable.basil);
 //        mNotificationsItemRequesterHeader.setText("Plants from " + requesterName);
         mNotificationsItemRequesterItem.setText(plantsWanted);
-        mNotificationsItemRequesterItemImage.setImageResource(plantImage);
+        mNotificationsItemRequesterItemImage.setImageResource(R.drawable.lemon);
         mNotificationsItemStar1.setImageResource(star1);
         mNotificationsItemStar2.setImageResource(star2);
         mNotificationsItemStar3.setImageResource(star3);

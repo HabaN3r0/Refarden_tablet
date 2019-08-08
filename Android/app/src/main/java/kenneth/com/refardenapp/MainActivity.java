@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             View headerView = navigationView.getHeaderView(0);
             final TextView profileName = (TextView) headerView.findViewById(R.id.navHeaderProfileName);
-//            final ImageView profileName = (ImageView) headerView.findViewById(R.id.navHeaderProfileImage);
+            final ImageView profileImage = (ImageView) headerView.findViewById(R.id.navHeaderProfileImage);
+            profileImage.setImageResource(R.mipmap.ic_jo_round);
             // Creating database instance and reference
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference("User Accounts").child(mAuth.getCurrentUser().getUid()).child("Profile");
